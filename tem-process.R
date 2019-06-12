@@ -49,7 +49,7 @@ sgma.start <- 0.05
 fn <-
     nls(
         density ~ 1 / (sgma * d * sqrt(2 * pi)) * exp(-log(d / d0) ^ 2 / (2 * sgma ^ 2)),
-        data = df,
+        data = df.hst,
         start = list(d0 = d.start, sgma = sgma.start),
         nls.control(maxiter = 1e5, tol = 1e-3),
         trace = TRUE
